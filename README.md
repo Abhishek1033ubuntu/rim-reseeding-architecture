@@ -1,5 +1,13 @@
 # RIM Handset Re-Inception & Architectural Strategy
 
+[![Hardware License](https://img.shields.io/badge/License--Hardware-CERN--OHL--S--2.0-blue.svg)](LICENSE-HARDWARE)
+[![Software License](https://img.shields.io/badge/License--Software-Apache--2.0-green.svg)](LICENSE-SOFTWARE)
+[![AI Architecture](https://img.shields.io/badge/Architecture--Co--Developed%20with-Google%20Gemini%20AI-8E75B5.svg?logo=google-gemini&logoColor=white)](#)
+[![Python Version](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg?logo=python&logoColor=white)](models/)
+[![Simulation Status](https://img.shields.io/badge/Monte%20Carlo-100k%20Runs%20Passed-brightgreen.svg)](models/monte_carlo_launch_sim.py)
+[![QMS Target](https://img.shields.io/badge/QMS%20Target-%3C%2035%20DPMO-orange.svg)](docs/qms-dpmo-protocol-spec.md)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0004--6913--096X-green.svg)](https://orcid.org/0009-0004-6913-096X)
+
 > **Next-Generation Hardware-Software Optimization Blueprint for Research In Motion (RIM)**
 > A dual-chassis modular hardware platform backed by an inline $7.50 12nm R-SCE Companion ASIC, wire-speed packet compression, and a low-DPMO manufacturing quality architecture.
 
