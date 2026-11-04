@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .box { fill: #161b22; stroke: #30363d; stroke-width: 2px; rx: 8px; ry: 8px; }
+      .core { fill: #1f2937; stroke: #3b82f6; stroke-width: 2px; rx: 6px; ry: 6px; }
+      .sec { fill: #2d151e; stroke: #ef4444; stroke-width: 2px; rx: 6px; ry: 6px; }
+      .title-text { fill: #58a6ff; font-family: sans-serif; font-size: 18px; font-weight: bold; text-anchor: middle; }
+      .main-text { fill: #f0f6fc; font-family: sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+      .sub-text { fill: #8b949e; font-family: sans-serif; font-size: 11px; text-anchor: middle; }
+      .sec-text { fill: #f87171; font-family: sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+      .arrow-line { stroke: #58a6ff; stroke-width: 2px; marker-end: url(#arrow); }
+      .sec-line { stroke: #f87171; stroke-width: 2px; stroke-dasharray: 4,4; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#58a6ff" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" class="bg" />
+
+  <!-- Title Section -->
+  <text x="450" y="35" class="title-text">RIM 12nm R-SCE Companion ASIC Microarchitecture</text>
+  <text x="450" y="55" class="sub-text">Hardware Wire-Speed Compression and AES-256-GCM Secure Enclave</text>
+
+  <!-- Main ASIC Outer Frame -->
+  <rect x="40" y="80" width="820" height="380" class="box" />
+  <text x="75" y="102" fill="#8b949e" font-family="sans-serif" font-size="11px" font-weight="bold">12nm SILICON DIE INTERCONNECT</text>
+
+  <!-- Block 1: DMA Engine -->
+  <rect x="70" y="120" width="220" height="130" class="core" />
+  <text x="180" y="175" class="main-text">Coherent DMA Engine</text>
+  <text x="180" y="195" class="sub-text">256 Descriptor Ring Buffer</text>
+
+  <!-- Block 2: Decompression Pipeline -->
+  <rect x="340" y="120" width="220" height="130" class="core" />
+  <text x="450" y="175" class="main-text">Decompression Pipeline</text>
+  <text x="450" y="195" class="sub-text">LZ4 / Huffman Hardware (≥ 2.5 GB/s)</text>
+
+  <!-- Block 3: Crypto Accelerator -->
+  <rect x="610" y="120" width="220" height="130" class="core" />
+  <text x="720" y="175" class="main-text">AES-256-GCM Engine</text>
+  <text x="720" y="195" class="sub-text">Zero-Latency Bus Decrypt</text>
+
+  <!-- Block 4: Secure Enclave -->
+  <rect x="200" y="300" width="500" height="120" class="sec" />
+  <text x="450" y="345" class="sec-text">Hardware Secure Enclave and PCV Key Vault</text>
+  <text x="450" y="370" class="sub-text">HMAC-SHA256 Root of Trust</text>
+  <text x="450" y="390" class="sub-text">Dynamic Persona Configuration Vector Ingestion</text>
+
+  <!-- Interconnect Lines -->
+  <line x1="290" y1="185" x2="340" y2="185" class="arrow-line" />
+  <line x1="560" y1="185" x2="610" y2="185" class="arrow-line" />
+  <line x1="450" y1="300" x2="450" y2="250" class="sec-line" />
+</svg>
