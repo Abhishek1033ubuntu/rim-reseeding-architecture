@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use or reference this research dossier, simulation models, or silicon microarchitecture specs, please cite it using the metadata below."
+type: dataset
+title: "RIM Handset Re-Inception & Architectural Strategy: Modular Hardware, Companion Silicon, and Agentic Enterprise Model"
+abstract: "A dual-chassis modular hardware platform (Platform A 6.4\" / Platform B 6.9\") paired with an inline 12nm R-SCE Companion ASIC for wire-speed compression (≥ 2.5 GB/s) and AES-256-GCM hardware encryption. Features a 100,000-run Monte Carlo launch model, < 35 DPMO SMT inspection protocol, US CHIPS Act Title IV grant proposal, and an Agentic AI enterprise restructuring strategy."
+authors:
+  - family-names: "Singh"
+    given-names: "Abhishek"
+    orcid: "https://orcid.org/0009-0004-6913-096X"
+repository-code: "https://github.com/Abhishek1033ubuntu/rim-reseeding-architecture"
+license-hardware: "CERN-OHL-S-2.0"
+license-software: "Apache-2.0"
+version: "1.0.0"
+date-released: "2026-11-04"
+keywords:
+  - "mobile-hardware"
+  - "custom-asic"
+  - "secure-enclave"
+  - "monte-carlo-simulation"
+  - "qms-inspection"
+  - "agentic-ai"
+  - "cern-ohl-s-2-0"
+  - "chips-act"
