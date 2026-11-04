@@ -117,24 +117,29 @@ python models/monte_carlo_launch_sim.py --iterations 100000 --region-mix NA:0.30
 
 ```text
 rim-reseeding-architecture/
-├── LICENSE-HARDWARE            # CERN-OHL-S-2.0 (Hardware Schematics, Pinouts & ASIC IP)
-├── LICENSE-SOFTWARE            # Apache-2.0 (Monte Carlo Engine, MES Logic & Overlay Software)
-├── README.md                   # Master Repository Dossier & Technical Architecture
+├── LICENSE-HARDWARE            # CERN-OHL-S-2.0 (ASIC, Pinouts, Layouts)
+├── LICENSE-SOFTWARE            # Apache-2.0 (Models, Firmware, MES Logic)
+├── README.md                   # Master README with Badges & Architecture Specs
+├── publish_repo.sh             # Git Initialization & Push Script
 ├── docs/
 │   ├── rim_executive_master_deck.pdf
 │   ├── qms-dpmo-protocol-spec.md
 │   ├── software-persona-overlays.md
-│   └── chips-act-grant-proposal.md
+│   ├── chips-act-grant-proposal.md
+│   └── agentic-ai-enterprise-restructuring.md   <-- NEW
 ├── models/
 │   ├── monte_carlo_launch_sim.py
-│   └── 2_chassis_bom_financial_engine.py
+│   ├── 2_chassis_bom_financial_engine.py
+│   ├── sim_results.json
+│   └── financial_summary.json
 ├── hardware/
-│   ├── r_sce_asic_12nm_block_diagram.svg
-│   ├── platform_a_6p4_compact_layout.dxf
-│   └── platform_b_6p9_expanded_layout.dxf
+│   ├── r_sce_asic_12nm_block_diagram.svg        
+│   ├── platform_a_6p4_compact_layout.dxf         <-- Upload via "Add File -> Upload"
+│   └── platform_b_6p9_expanded_layout.dxf         <-- Upload via "Add File -> Upload"
 └── firmware/
     ├── r_sce_dma_crypto_driver.c
-    └── pcv_enclave_provisioner.py
+    ├── pcv_enclave_provisioner.py
+    └── rim-r-sce.dts
 
 ```
 
