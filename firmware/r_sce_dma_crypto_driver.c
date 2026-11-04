@@ -1,4 +1,9 @@
 /**
+/*
+ * Copyright (c) 2026 Abhishek Singh (GitHub: Abhishek1033ubuntu)
+ * Licensed under the Apache License, Version 2.0 (the "License-Software");
+ * You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
+ */ 
  * ============================================================================
  * RIM Security & Compression Engine (R-SCE) 12nm Companion ASIC Driver
  * ============================================================================
