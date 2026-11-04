@@ -1,0 +1,82 @@
+/dts-v1/;
+/plugin/;
+
+/**
+ * ============================================================================
+ * RIM Security & Compression Engine (R-SCE) 12nm Companion ASIC DTS Node
+ * ============================================================================
+ * File: firmware/rim-r-sce.dts
+ * License: Apache-2.0
+ * Description:
+ *   Device Tree Source (DTS) overlay binding for integrating the custom
+ *   R-SCE 12nm Companion ASIC onto ARM64 / RISC-V primary SoC Linux kernels.
+ *   Defines MMIO register space, GIC interrupt mapping, clocks, and DMA coherency.
+ * ============================================================================
+ */
+
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+#include <dt-bindings/clock/rim-soc-clocks.h>
+#include <dt-bindings/power/rim-power-domains.h>
+
+/ {
+    compatible = "rim,platform-a-6p4", "rim,platform-b-6p9", "rim,soc-base";
+
+    fragment@0 {
+        target-path = "/soc";
+        __overlay__ {
+            #address-cells = <2>;
+            #size-cells = <2>;
+
+            /* R-SCE 12nm Companion ASIC Memory-Mapped IO & DMA Node */
+            r_sce_asic: r-sce@10c00000 {
+                compatible = "rim,r-sce-12nm-asic", "syscon";
+                reg = <0x00000000 0x10c00000 0x00000000 0x00004000>; /* 16KB MMIO Region */
+                
+                /* GIC SPI Interrupt: Interrupt #142, Level High */
+                interrupts = <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>;
+                interrupt-names = "dma_irq";
+                
+                /* Primary Core Clock and Bus Interface Clocks */
+                clocks = <&soc_clocks RIM_CLK_RSCE_CORE>,
+                         <&soc_clocks RIM_CLK_RSCE_AXI_BUS>;
+                clock-names = "core_clk", "bus_clk";
+                
+                /* Power Domain Management */
+                power-domains = <&power_domains RIM_PD_RSCE_ENCLAVE>;
+                
+                /* Enable Cache Coherent Direct Memory Access (DMA) */
+                dma-coherent;
+                
+                /* Advanced Peripheral Bus / AXI Interconnect Master ID */
+                iommus = <&main_smmu 0x07f0>;
+                
+                /* Reserved Memory Allocation for Secure Enclave Ring Buffers */
+                memory-region = <&r_sce_reserved_mem>;
+                
+                /* ASIC Hardware Capabilities & Configuration Properties */
+                rim,max-dma-descriptors = <256>;
+                rim,wire-speed-target-gbps = <2>;
+                rim,secure-enclave-enabled;
+                rim,pcv-enforce-signature;
+                
+                status = "okay";
+            };
+        };
+    };
+
+    fragment@1 {
+        target-path = "/reserved-memory";
+        __overlay__ {
+            #address-cells = <2>;
+            #size-cells = <2>;
+
+            /* Reserved Contiguous DMA Memory for Wire-Speed Packets */
+            r_sce_reserved_mem: r-sce-mem@98000000 {
+                compatible = "shared-dma-pool";
+                reg = <0x00000000 0x98000000 0x00000000 0x04000000>; /* 64MB Coherent Pool */
+                no-map;
+                reusable = <0>;
+            };
+        };
+    };
+};
